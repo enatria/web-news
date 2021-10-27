@@ -1,31 +1,77 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import Button from '../../../atoms/Button';
+import Link from '../../../atoms/Link';
+import Drawer from "@mui/material/Drawer";
+import Container from "@mui/material/Container";
+import Search from '../../../atoms/Search';
+import './index.css';
 
 export default function NavSearch() {
+  const [open, setOpen] = useState(false);
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" className="app-bar">
+        <Container>
         <Toolbar>
-          <IconButton
-            size="large"
+        <Hidden mdUp>
+        <IconButton  size="large"
+        
             edge="start"
-            color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
+            sx={{ mr: 2}} onClick={() => setOpen(true)}>
+              <MenuIcon color="success" />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        </Hidden>
+          <Typography variant="h6" component="div" sx className="brand">
             News
           </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
+          <Hidden smDown>
+          <div className="nav-link">
+            <Box sx={{
+              display:'flex',
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              alignItems: 'center'
+            }}>
+              <Box><Link>Indonesia</Link></Box>
+              <Box><Link>Programming</Link></Box>
+              <Box><Link>Covid-19</Link></Box>
+            </Box>
+          </div>
+          <div style={{width:'50',}}>
+            <Search/>
+          </div>
+          <Button>Login</Button>
+          </Hidden>
+          </Toolbar>
+        </Container>
+        
+          <Drawer
+        anchor="top"
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
+      >
+        <div>
+            <Box sx={{
+              display:'flex',
+              flexDirection: 'column',
+              margin:8
+            }}>
+              <Box sx={{marginBottom:2}}><Link>Indonesia</Link></Box>
+              <Box sx={{marginBottom:2}}><Link>Programming</Link></Box>
+              <Box sx={{marginBottom:2}}><Link>Covid-19</Link></Box>
+            <Button>Login</Button>
+            </Box>
+          </div>
+      </Drawer>
       </AppBar>
     </Box>
   );

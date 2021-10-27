@@ -1,0 +1,15 @@
+.app-bar{
+    background-color: white !important;
+    border: none !important;
+    box-shadow: none !important ;
+}
+
+.brand{
+    color:black;
+    font-weight: 600 !important;
+}
+
+.nav-link{
+    width: 50%;
+    margin: auto;
+}

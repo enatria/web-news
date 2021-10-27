@@ -5,17 +5,16 @@ import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 
 
-
 const Search = () => {
     return ( 
         <Paper
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 700, borderRadius:'50px', border:'0.2px solid grey' }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width:"100%", borderRadius:'50px', border:'0.2px solid grey' }}
     >
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Google Maps"
-        inputProps={{ 'aria-label': 'search google maps' }}
+        inputProps={{ 'aria-label': 'search the news' }}
       />
       <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />
@@ -23,5 +22,6 @@ const Search = () => {
     </Paper>
      );
 }
- 
+
+
 export default Search;

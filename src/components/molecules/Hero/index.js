@@ -18,7 +18,9 @@ const Hero = () => {
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         </Typography>
                     </Box>
+                    <div style={{width:800}}>
                     <Search/>
+                    </div>
                 </Box>
             </Container>
         </Box>
