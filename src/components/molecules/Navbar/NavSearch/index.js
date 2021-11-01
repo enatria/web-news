@@ -33,41 +33,41 @@ export default function NavSearch() {
             News
           </Typography>
           <Hidden smDown>
-          <div className="nav-link">
-            <Box sx={{
-              display:'flex',
-              justifyContent: 'space-around',
-              flexDirection: 'row',
-              alignItems: 'center'
-            }}>
-              <Box><Link>Indonesia</Link></Box>
-              <Box><Link>Programming</Link></Box>
-              <Box><Link>Covid-19</Link></Box>
-            </Box>
-          </div>
-          <div style={{width:'50',}}>
-            <Search/>
-          </div>
-          <Button>Login</Button>
+            <div className="nav-link">
+              <Box sx={{
+                display:'flex',
+                justifyContent: 'space-around',
+                flexDirection: 'row',
+                alignItems: 'center'
+              }}>
+                <Box><Link href={'/'}>Indonesia</Link></Box>
+                <Box><Link href={'/programming'}>Programming</Link></Box>
+                <Box><Link href={'/covid19'}>Covid-19</Link></Box>
+              </Box>
+            </div>
+            <div style={{width:'50',}}>
+              <Search/>
+            </div>
+            <Button>Login</Button>
           </Hidden>
           </Toolbar>
         </Container>
         
-          <Drawer
-        anchor="top"
-        open={open}
-        onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}
-      >
+        <Drawer
+          anchor="top"
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+        >
         <div>
             <Box sx={{
               display:'flex',
               flexDirection: 'column',
               margin:8
             }}>
-              <Box sx={{marginBottom:2}}><Link>Indonesia</Link></Box>
-              <Box sx={{marginBottom:2}}><Link>Programming</Link></Box>
-              <Box sx={{marginBottom:2}}><Link>Covid-19</Link></Box>
+              <Box sx={{marginBottom:2}}><Link href={'/'}>Indonesia</Link></Box>
+              <Box sx={{marginBottom:2}}><Link href={'/programming'}>Programming</Link></Box>
+              <Box sx={{marginBottom:2}}><Link href={'/covid19'}>Covid-19</Link></Box>
             <Button>Login</Button>
             </Box>
           </div>

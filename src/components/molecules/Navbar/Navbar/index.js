@@ -40,12 +40,12 @@ export default function Navbar() {
               flexDirection: 'row',
               alignItems: 'center'
             }}>
-              <Box><Link>Indonesia</Link></Box>
-              <Box><Link>Programming</Link></Box>
-              <Box><Link>Covid-19</Link></Box>
+              <Box><Link href={'/'}>Indonesia</Link></Box>
+              <Box><Link href={'/programming'}>Programming</Link></Box>
+              <Box><Link href={'/covid19'}>Covid-19</Link></Box>
             </Box>
           </div>
-          <Button>Login</Button>
+          <Button href={"/login"}>Login</Button>
           </Hidden>
           </Toolbar>
         </Container>

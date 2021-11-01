@@ -27,7 +27,7 @@ function App() {
                 exact={exact}
                 heroLayout={heroLayout}
                 render={(props) => {
-                  if (HeroLayout) {
+                  if (heroLayout) {
                     return (
                       <HeroLayout>
                         <Component {...props} />

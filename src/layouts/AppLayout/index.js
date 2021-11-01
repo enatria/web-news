@@ -1,15 +1,15 @@
-import { Navbar } from '../../components/molecules';
+import { NavSearch } from '../../components/molecules';
 import PropTypes from 'prop-types';
 
 const AppLayout = ({children}) => {
     return ( 
         <div className="app-layout">
-            <Navbar/>
+            <NavSearch/>
             <div className="content">
                 {children}
             </div>
         </div>
-     );
+    );
 }
 
 AppLayout.propTypes = {

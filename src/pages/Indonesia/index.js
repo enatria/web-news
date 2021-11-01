@@ -1,8 +1,8 @@
 const Indonesia = () => {
     return (
         <div>
-            </div>
-     );
+        </div>
+    );
 }
- 
+
 export default Indonesia;
