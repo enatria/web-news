@@ -1,16 +1,16 @@
-import { Navbar, Footer } from '../../components/molecules';
+import { NavSearch, Footer } from '../../components/molecules';
 import PropTypes from 'prop-types';
 
 const AppLayout = ({children}) => {
     return ( 
         <div className="app-layout">
-            <Navbar/>
+            <NavSearch/>
             <div className="content">
                 {children}
             </div>
             <Footer/>
         </div>
-     );
+    );
 }
 
 AppLayout.propTypes = {
