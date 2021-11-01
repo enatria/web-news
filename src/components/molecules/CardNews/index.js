@@ -11,27 +11,33 @@ import Button from '../../atoms/Button';
 import './index.css'
 
 
-export default function CardNews() {
+export default function CardNews({content}) {
+  const days    = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  const months  = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+  const time  = new Date(content.publishedAt)
+  const day   = days[time.getDay()]
+  const date  = time.getDate()+1
+  const month = months[time.getMonth()]
+  const year  = time.getFullYear()
 
   return (
-    <Card className="card">
+    <Card className="card" style={{margin: 5, minHeight: 450}}>
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image={content.urlToImage}
         alt="Paella dish"
       />
-          <CardContent>
-      <Typography variant="span" color="text.secondary">
-         Monday, 13 November
+      <CardContent style={{height: 150, overflow: 'hidden'}}>
+        <Typography variant="span" color="text.secondary">
+          {`${day}, ${date} ${month} ${year}`}
         </Typography>
-      <Typography variant="h4" >
-         Lorem ipsum dolor sit amet.
+        <Typography variant="h5" >
+          {content.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {content.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
