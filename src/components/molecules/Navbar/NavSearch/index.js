@@ -42,7 +42,7 @@ export default function NavSearch() {
               }}>
                 <Box><Link href={'/'}>Indonesia</Link></Box>
                 <Box><Link href={'/programming'}>Programming</Link></Box>
-                <Box><Link href={'/covid19'}>Covid-19</Link></Box>
+                <Box><Link href={'/covid'}>Covid-19</Link></Box>
               </Box>
             </div>
             <div style={{width:'50',}}>
@@ -67,7 +67,7 @@ export default function NavSearch() {
             }}>
               <Box sx={{marginBottom:2}}><Link href={'/'}>Indonesia</Link></Box>
               <Box sx={{marginBottom:2}}><Link href={'/programming'}>Programming</Link></Box>
-              <Box sx={{marginBottom:2}}><Link href={'/covid19'}>Covid-19</Link></Box>
+              <Box sx={{marginBottom:2}}><Link href={'/covid'}>Covid-19</Link></Box>
             <Button>Login</Button>
             </Box>
           </div>

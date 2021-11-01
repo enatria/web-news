@@ -42,7 +42,7 @@ export default function Navbar() {
             }}>
               <Box><Link href={'/'}>Indonesia</Link></Box>
               <Box><Link href={'/programming'}>Programming</Link></Box>
-              <Box><Link href={'/covid19'}>Covid-19</Link></Box>
+              <Box><Link href={'/covid'}>Covid-19</Link></Box>
             </Box>
           </div>
           <Button href={"/login"}>Login</Button>
