@@ -1,4 +1,4 @@
-import { Navbar } from '../../components/molecules';
+import { Navbar, Footer } from '../../components/molecules';
 import PropTypes from 'prop-types';
 
 const AppLayout = ({children}) => {
@@ -8,6 +8,7 @@ const AppLayout = ({children}) => {
             <div className="content">
                 {children}
             </div>
+            <Footer/>
         </div>
      );
 }
