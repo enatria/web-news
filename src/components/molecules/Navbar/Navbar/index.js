@@ -29,9 +29,9 @@ export default function Navbar() {
               <MenuIcon color="success" />
           </IconButton>
         </Hidden>
-          <Typography variant="h6" component="div" sx className="brand">
+          <span className="brand">
             News
-          </Typography>
+          </span>
           <Hidden smDown>
           <div className="nav-link">
             <Box sx={{

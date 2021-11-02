@@ -11,12 +11,12 @@ const Hero = () => {
             <Container>
                 <Box className="hero" component="div">
                     <Box component="div" className="typography-group">
-                        <Typography variant="h1" component="h1" sx={{fontSize:55, fontWeight:600}}>
+                        <h1>
                         A good place to read <br /> updated news 
-                        </Typography>
-                        <Typography  component="p">
+                        </h1>
+                        <p>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </Typography>
+                        </p>
                     </Box>
                     <div style={{width:800}}>
                     <Search/>

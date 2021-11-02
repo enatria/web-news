@@ -4,8 +4,8 @@ import MuiLink from '@mui/material/Link'
 
 function Link(props) {
     return (
-        <RouteLink style={{textDecoration: 'none', color:'black'}} to={props.href}>
-            <MuiLink underline="none">
+        <RouteLink style={{textDecoration: 'none', fontSize:18}} to={props.href}>
+            <MuiLink underline="none" sx={{ color:'white'}}>
                 {props.children}
             </MuiLink>
         </RouteLink>

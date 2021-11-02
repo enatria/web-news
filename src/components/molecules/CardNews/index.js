@@ -30,15 +30,15 @@ export default function CardNews({content}) {
         alt="Paella dish"
       />
       <CardContent style={{height: 150, overflow: 'hidden'}}>
-        <Typography variant="span" color="text.secondary">
+        <span>
           {`${day}, ${date} ${month} ${year}`}
-        </Typography>
-        <Typography variant="h5" >
+        </span>
+        <h3 >
           {content.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+        </h3>
+        <p>
           {content.description}
-        </Typography>
+        </p>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">

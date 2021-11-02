@@ -1,11 +1,13 @@
 .app-bar{
-    background-color: white !important;
+    background-color: black !important;
     border: none !important;
     box-shadow: none !important ;
+    position: fixed;
+    top: 0;
 }
 
 .brand{
-    color:black;
+    color:white;
     font-weight: 600 !important;
 }
 
