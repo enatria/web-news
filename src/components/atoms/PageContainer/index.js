@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const PageContainer = ({children}) => {
-    return (
-        <div style={{minHeight: '100vh'}}>{children}</div>
-    )
-}
+const PageContainer = ({ children }) => {
+  return <div style={{ minHeight: "100vh" }}>{children}</div>;
+};
 
-export default PageContainer
+export default PageContainer;

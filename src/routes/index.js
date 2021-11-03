@@ -1,24 +1,24 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
 const AppRoutes = [
   {
-    path: '/',
-    component: lazy(() => import('../pages/Indonesia')),
+    path: "/",
+    component: lazy(() => import("../pages/Indonesia")),
     exact: true,
-    heroLayout: true
+    heroLayout: true,
   },
   {
-    path: '/programming',
-    component: lazy(() => import('../pages/Programming')),
-    excact: false,
-    heroLayout: false
+    path: "/programming",
+    component: lazy(() => import("../pages/Programming")),
+    exact: false,
+    heroLayout: false,
   },
   {
-    path: '/covid',
-    component: lazy(() => import('../pages/Covid')),
-    excact: false,
-    heroLayout: false
-  }
+    path: "/covid",
+    component: lazy(() => import("../pages/Covid")),
+    exact: false,
+    heroLayout: false,
+  },
 ];
 
 export { AppRoutes };
