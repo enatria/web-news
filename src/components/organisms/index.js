@@ -1,3 +1,3 @@
-import ListNews from './ListNews';
+import ListNews, { endpoints } from './ListNews';
 
-export { ListNews };
+export { ListNews, endpoints };

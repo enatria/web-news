@@ -12,6 +12,12 @@ const AppRoutes = [
     component: lazy(() => import('../pages/Programming')),
     excact: false,
     heroLayout: false
+  },
+  {
+    path: '/covid',
+    component: lazy(() => import('../pages/Covid')),
+    excact: false,
+    heroLayout: false
   }
 ];
 

@@ -1,13 +1,14 @@
 import React from 'react'
-import {ListNews} from '../../components/organisms'
+import {ListNews, endpoints} from '../../components/organisms'
+import Container from '../../components/atoms/PageContainer'
 
 const Indonesia = () => {
     
     return (
-        <div>
-            <ListNews/>
-            </div>
-     );
+        <Container>
+            <ListNews endpoint={endpoints.HEADLINES} country={'id'}/>
+        </Container>
+    );
 }
 
 export default Indonesia;
