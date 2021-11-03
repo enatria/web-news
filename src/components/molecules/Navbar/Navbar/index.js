@@ -5,7 +5,6 @@ import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '../../../atoms/Button';
 import Link from '../../../atoms/Link';
 import Drawer from "@mui/material/Drawer";
