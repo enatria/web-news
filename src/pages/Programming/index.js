@@ -1,12 +1,18 @@
 import React from 'react'
-import { ListNews } from '../../components/organisms'
+import { ListNews, endpoints } from '../../components/organisms'
 import Container from '../../components/atoms/PageContainer'
+import { Helmet } from 'react-helmet'
 
 function Programming() {
     return (
-        <Container>
-            <ListNews query={'programming'} />
-        </Container>
+        <>
+            <Helmet>
+                <title>Programming - Web News</title>
+            </Helmet>
+            <Container>
+                <ListNews endpoint={endpoints.EVERYTHING} query={'programming'} />
+            </Container>
+        </>
     )
 }
 

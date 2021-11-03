@@ -81,7 +81,7 @@ const ListNews = ({endpoint, country, query}) => {
 }
 
 ListNews.defaultProps = {
-  endpoint: endpoints.EVERYTHING
+  endpoint: endpoints.HEADLINES
 }
 
 export default ListNews;
