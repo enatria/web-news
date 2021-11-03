@@ -1,5 +1,5 @@
 import React from 'react'
-// import { color } from '../_global-conf'
+import { color } from '../_global-conf'
 import { Link as RouteLink } from 'react-router-dom'
 import MuiButton from '@mui/material/Button'
 import PropTypes from 'prop-types'
@@ -11,10 +11,9 @@ export const buttonVariant = {
 
 
 function Button(props) {
-    console.log(process.env.REACT_APP_COLOR_PRIMARY)
     return (
         <RouteLink style={{textDecoration: 'none'}} to={props.href}>
-            <MuiButton variant={props.variant}>
+            <MuiButton variant={props.variant} style={{backgroundColor: color.PRIMARY}}>
                 {props.children}
             </MuiButton>
         </RouteLink>

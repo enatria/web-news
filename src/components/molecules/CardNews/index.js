@@ -11,7 +11,7 @@ import './index.css'
 
 
 export default function CardNews({content}) {
-  const days    = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  const days    = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   const months  = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
   const time  = new Date(content.publishedAt)
@@ -30,7 +30,7 @@ export default function CardNews({content}) {
       />
       <CardContent style={{height: 150, overflow: 'hidden'}}>
         <span>
-          {`${day}, ${date} ${month} ${year}`}
+          {`${day}, ${date} ${month} ${year}`} - {content.source.name}
         </span>
         <h3 >
           {content.title}
