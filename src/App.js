@@ -26,7 +26,7 @@ const theme = createMuiTheme({
     alt: "#7D6C61",
   },
   typography: {
-    fontFamily: "Montserrat",
+    fontFamily: "Signika",
     fontWeightLight: 400,
     fontWeightSemiBold: 500,
     fontWeightBold: 600,

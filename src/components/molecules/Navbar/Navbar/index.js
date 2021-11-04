@@ -17,11 +17,7 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="app-bar">
-        <Container
-          sx={{
-            fontFamily: "Montserrat",
-          }}
-        >
+        <Container>
           <Toolbar>
             <Hidden mdUp>
               <IconButton
