@@ -10,37 +10,6 @@ import Button from "../../atoms/Button";
 import "./index.css";
 import { Typography } from "@mui/material";
 
-export default function CardNews({ content }) {
-  const days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-<<<<<<< HEAD
-  const time = new Date(content.publishedAt);
-  const day = days[time.getDay()];
-  const date = time.getDate() + 1;
-  const month = months[time.getMonth()];
-  const year = time.getFullYear();
-=======
 export default function CardNews({content}) {
   const days    = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   const months  = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -50,7 +19,6 @@ export default function CardNews({content}) {
   const date  = time.getDate()+1
   const month = months[time.getMonth()]
   const year  = time.getFullYear()
->>>>>>> b8cd445e350bce1a92b8a9b9719e1092655f67af
 
   return (
     <Card
@@ -63,21 +31,13 @@ export default function CardNews({content}) {
         image={content.urlToImage}
         alt="Paella dish"
       />
-<<<<<<< HEAD
-      <CardContent style={{ height: 150, overflow: "hidden" }}>
-        <span>{`${day}, ${date} ${month} ${year}`}</span>
-        <Typography
-          sx={{ fontSize: 18, fontWeight: "fontWeightBold", color: "main" }}
-        >
-=======
       <CardContent style={{height: 150, overflow: 'hidden'}}>
         <span>
           {`${day}, ${date} ${month} ${year}`} - {content.source.name}
         </span>
         <h3 >
->>>>>>> b8cd445e350bce1a92b8a9b9719e1092655f67af
           {content.title}
-        </Typography>
+        </h3>
         <Typography
           sx={{ fontSize: 12, fontWeight: "fontWeightLight", color: "alt" }}
         >
