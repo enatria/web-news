@@ -7,7 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import Button from "../../atoms/Button";
 
-import "./index.css";
+import {useHistory} from 'react-router-dom'; 
+
 import { Typography } from "@mui/material";
 
 export default function CardNews({content}) {
@@ -19,6 +20,8 @@ export default function CardNews({content}) {
   const date  = time.getDate()+1
   const month = months[time.getMonth()]
   const year  = time.getFullYear()
+
+  const history = useHistory()
 
   return (
     <Card
@@ -32,12 +35,12 @@ export default function CardNews({content}) {
         alt="Paella dish"
       />
       <CardContent style={{height: 150, overflow: 'hidden'}}>
-        <span>
+        <Typography variant="span">
           {`${day}, ${date} ${month} ${year}`} - {content.source.name}
-        </span>
-        <h3 >
+        </Typography>
+        <Typography variant="h5" sx={{fontWeight:'fontWeightSemiBold'}}>
           {content.title}
-        </h3>
+        </Typography>
         <Typography
           sx={{ fontSize: 12, fontWeight: "fontWeightLight", color: "alt" }}
         >
@@ -48,7 +51,7 @@ export default function CardNews({content}) {
         <IconButton aria-label="add to favorites">
           <BookmarkIcon />
         </IconButton>
-        <Button>Read More</Button>
+        <Button onClick={()=>history.push(`${content.title}/${content.id}`)}>Read More</Button>
       </CardActions>
     </Card>
   );

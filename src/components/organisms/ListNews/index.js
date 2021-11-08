@@ -1,58 +1,51 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { CardNews } from '../../molecules';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import axios from 'axios';
+import Loader from "react-loader-spinner";
+import useFetch from '../../../hooks/useFetch'
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    marginTop:'40',
+    textAlign:'center',
+  },
+});
 
 export const endpoints = {
   EVERYTHING: 'everything',
   HEADLINES: 'top-headlines'
 }
 
-const ListNews = ({endpoint, country, query}) => {
+const ListNews = ({ endpoint, country, query }) => {
+  const classes = useStyles();
   const API_KEY   = '287523f3d2a8490fba3d719d94fb4536'
   const URL       = `https://newsapi.org/v2/${endpoint}?apiKey=${API_KEY}${country ? '&country='+country : '' }${query ? '&q='+query : '' }`
 
-  const [data, setData] = useState([])
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
-  
-  useEffect(() => {
-    
-    let isMounted = true
-    setLoading(true)
-
-    axios.get(URL)
-      .then(res => {
-        if (isMounted) {
-          setData(res.data.articles)
-          setError(false)
-        }
-      })
-      .catch(error => {
-        if (isMounted) {
-          setError(error)
-          setData([])
-        }
-      })
-      .finally(() => setLoading(false))
-
-    return () => (
-      isMounted = false
-    )
-  }, [URL])
+  const {loading, error, data} = useFetch(URL)
 
   return (
-    <Box style={{margin: 50}}>
+    <Box >
       <Container>
         {loading ?
-        <h1>Loading</h1>
+          <Box className={classes.root} component="div" mt={5}>
+            <Loader
+              type="Puff"
+              color="#333333"
+              height={50}
+              width={60}
+              timeout={3000} //3 secs
+            />
+          </Box>
+          
         : error ?
         <h1>{error}</h1>
         : <Grid container >
-          {data.map((item, key) => {
+          {data?.map((item, key) => {
             if (key === 0) {
               return (
                 <Grid item xs={8} key={key}>

@@ -43,11 +43,13 @@ export default function NavSearch() {
                 <Box><Link href={'/programming'}>Programming</Link></Box>
                 <Box><Link href={'/covid'}>Covid-19</Link></Box>
               </Box>
-            </div>
-            <div style={{width:'50',}}>
-              <Search/>
-            </div>
-            <Button>Login</Button>
+              </div>
+              <Box style={{marginRight:'50'}}>
+                <Search/>
+              </Box>
+              <Box>
+                <Button>Saved</Button>
+              </Box>
           </Hidden>
           </Toolbar>
         </Container>
