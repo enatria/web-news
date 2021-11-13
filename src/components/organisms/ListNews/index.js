@@ -21,7 +21,7 @@ export const endpoints = {
   HEADLINES: 'top-headlines'
 }
 
-const ListNews = ({ endpoint, country, query }) => {
+const ListNews = ({ endpoint, country, query, gridNoBreakPoint }) => {
   const classes = useStyles();
   const API_KEY   = '287523f3d2a8490fba3d719d94fb4536'
   const URL       = `https://newsapi.org/v2/${endpoint}?apiKey=${API_KEY}${country ? '&country='+country : '' }${query ? '&q='+query : '' }`
@@ -46,25 +46,33 @@ const ListNews = ({ endpoint, country, query }) => {
         <h1>{error}</h1>
         : <Grid container >
           {data?.map((item, key) => {
-            if (key === 0) {
-              return (
-                <Grid item xs={8} key={key}>
-                  <CardNews content={item}/>
-                </Grid>
-              )
-            }
-            else if (key === 1) {
-              return (
-                <Grid item xs={4} key={key}>
-                  <CardNews content={item}/>
-                </Grid> 
-              )
-            } else {
+            if (gridNoBreakPoint) {
               return (
                 <Grid item xs md={6} lg={4} key={key}>
                   <CardNews content={item}/>
                 </Grid>
               )
+            } else {
+              if (key === 0) {
+                return (
+                  <Grid item xs={8} key={key}>
+                    <CardNews content={item}/>
+                  </Grid>
+                )
+              }
+              else if (key === 1) {
+                return (
+                  <Grid item xs={4} key={key}>
+                    <CardNews content={item}/>
+                  </Grid> 
+                )
+              } else {
+                return (
+                  <Grid item xs md={6} lg={4} key={key}>
+                    <CardNews content={item}/>
+                  </Grid>
+                )
+              }
             }
           })}
         </Grid>}
@@ -74,7 +82,8 @@ const ListNews = ({ endpoint, country, query }) => {
 }
 
 ListNews.defaultProps = {
-  endpoint: endpoints.HEADLINES
+  endpoint: endpoints.HEADLINES,
+  gridNoBreakPoint: false
 }
 
 export default ListNews;

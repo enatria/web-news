@@ -44,7 +44,7 @@ export default function NavSearch() {
                 <Box><Link href={'/covid'}>Covid-19</Link></Box>
               </Box>
               </div>
-              <Box style={{marginRight:'50'}}>
+              <Box style={{marginRight:50}}>
                 <Search/>
               </Box>
               <Box>

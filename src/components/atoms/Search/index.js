@@ -11,8 +11,8 @@ const Search = () => {
   const history = useHistory()
 
   function onChange(e) {
-    e.preventDefault();
     setValueSearch(e.target.value)
+    e.preventDefault();
   }
     return ( 
         <Paper
@@ -27,11 +27,11 @@ const Search = () => {
         value={valueSearch}
         onChange = {onChange}
       />
-      <IconButton type="submit" sx={{ p: '8x' }} aria-label="search " onClick={(e)=> history.push(`/${valueSearch}`) }>
+      <IconButton type="submit" sx={{ p: '8x' }} aria-label="search" onClick={(e) => {history.push(`/${valueSearch}`); e.preventDefault()} }>
         <SearchIcon />
       </IconButton>
     </Paper>
-     );
+    );
 }
 
 

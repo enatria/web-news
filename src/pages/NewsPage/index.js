@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListNews, endpoints } from '../../components/organisms'
+import { endpoints, ListNews } from '../../components/organisms'
 import { NewsTitle } from '../../components/molecules'
 import { useParams } from 'react-router-dom';
 import Container from '../../components/atoms/PageContainer'
@@ -11,11 +11,11 @@ function NewsPage() {
     return (
         <>
             <Helmet>
-                <title>{id} - Web News</title>
+                <title>search for "{id}" - Web News</title>
             </Helmet>
             <Container>
-                <NewsTitle id={id}/>
-                <ListNews endpoint={endpoints.EVERYTHING} query={id} />
+                <NewsTitle id={id} fromSearch/>
+                <ListNews endpoint={endpoints.EVERYTHING} query={id} gridNoBreakPoint />
             </Container>
         </>
     )

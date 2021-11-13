@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { Typography } from "@mui/material";
 
-const NewsTitle = ({id}) => {
+const NewsTitle = ({id, fromSearch}) => {
   return (
     <Box component="div">
       <Container>
@@ -18,7 +18,11 @@ const NewsTitle = ({id}) => {
         >
           <Box sx={{ textAlign: "center", mb: 4 }}>
             <Typography color="main" variant="h2" fontWeight="fontWeightBold">
-              <span style={{textTransform:'capitalize'}}>{id} </span>News
+              {fromSearch ? 
+              <>search for "{id}"</>
+              : 
+              <><span style={{textTransform:'capitalize'}}>{id} </span>News</>
+              }
             </Typography>
             <hr></hr>
           </Box>
