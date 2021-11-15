@@ -10,10 +10,13 @@ import Link from '../../../atoms/Link';
 import Drawer from "@mui/material/Drawer";
 import Container from "@mui/material/Container";
 import Search from '../../../atoms/Search';
+import {useHistory} from 'react-router-dom'
 import './index.css';
 
 export default function NavSearch() {
   const [open, setOpen] = useState(false);
+  const history = useHistory();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="app-bar">
@@ -48,8 +51,8 @@ export default function NavSearch() {
                 <Search/>
               </Box>
               <Box>
-                <Button>Saved</Button>
-              </Box>
+              <Button onClick={(e)=>{history.push('/saved'); e.preventDefault()}}>Saved</Button>
+            </Box>
           </Hidden>
           </Toolbar>
         </Container>
@@ -69,7 +72,8 @@ export default function NavSearch() {
               <Box sx={{marginBottom:2}}><Link href={'/'}>Indonesia</Link></Box>
               <Box sx={{marginBottom:2}}><Link href={'/programming'}>Programming</Link></Box>
               <Box sx={{marginBottom:2}}><Link href={'/covid'}>Covid-19</Link></Box>
-            <Button>Login</Button>
+            
+              <Button onClick={(e)=>{history.push('/saved'); e.preventDefault()}}>Saved</Button>
             </Box>
           </div>
       </Drawer>

@@ -12,7 +12,7 @@ export const buttonVariant = {
 function Button(props) {
   return (
       <RouteLink style={{textDecoration: 'none'}} to={props.href}>
-          <MuiButton variant={props.variant} style={{backgroundColor: color.PRIMARY}}>
+          <MuiButton variant={props.variant} style={{backgroundColor: color.PRIMARY}} onClick={props.onClick}>
               {props.children}
           </MuiButton>
       </RouteLink>
@@ -26,6 +26,7 @@ Button.defaultProps = {
 Button.propTypes = {
   href: PropTypes.string,
   variant: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default Button;

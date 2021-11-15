@@ -7,7 +7,9 @@ import IconButton from "@mui/material/IconButton";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import Button from "../../atoms/Button";
 
-import {useHistory} from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { saveNews } from '../../../redux/newsSlice';
 
 import { Typography } from "@mui/material";
 
@@ -22,6 +24,21 @@ export default function CardNews({content}) {
   const year  = time.getFullYear()
 
   const history = useHistory()
+  const dispatch = useDispatch();
+
+  const save = (event) => {
+    event.preventDefault();
+    dispatch(saveNews({
+      id: content.id,
+      image: content.urlToImage,
+      date:content.publishedAt,
+      source:content.source.name,
+      title: content.title,
+      description: content.description
+    }));
+      
+  }
+
 
   return (
     <Card
@@ -49,7 +66,7 @@ export default function CardNews({content}) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <BookmarkIcon />
+          <BookmarkIcon onClick={ save}/>
         </IconButton>
         <Button onClick={()=>history.push(`${content.title}/${content.id}`)}>Read More</Button>
       </CardActions>

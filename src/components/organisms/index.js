@@ -1,3 +1,4 @@
 import ListNews, { endpoints } from './ListNews';
+import ListNewsSaved from './ListNewsSaved';
 
-export { ListNews, endpoints };
+export { ListNews,ListNewsSaved, endpoints };

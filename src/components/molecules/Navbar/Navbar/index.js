@@ -9,10 +9,12 @@ import Button from "../../../atoms/Button";
 import Link from "../../../atoms/Link";
 import Drawer from "@mui/material/Drawer";
 import Container from "@mui/material/Container";
+import { useHistory } from 'react-router-dom';
 
 import "./index.css";
 
 export default function Navbar() {
+  const history = useHistory()
   const [open, setOpen] = useState(false);
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -52,7 +54,8 @@ export default function Navbar() {
                   </Box>
                 </Box>
               </div>
-              <Button href={"/saved"}>saved</Button>
+              
+              <Button onClick={(e)=>{history.push('/saved'); e.preventDefault()}}>Saved</Button>
             </Hidden>
           </Toolbar>
         </Container>
@@ -80,7 +83,8 @@ export default function Navbar() {
               <Box sx={{ marginBottom: 2 }}>
                 <Link>Covid-19</Link>
               </Box>
-              <Button>Login</Button>
+              
+              <Button onClick={()=>history.push('/saved')}>Saved</Button>
             </Box>
           </div>
         </Drawer>

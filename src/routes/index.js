@@ -19,10 +19,17 @@ const AppRoutes = [
     exact: true,
     heroLayout: false,
   },
+  
+  {
+    path: "/saved",
+    component: lazy(() => import("../pages/Saved")),
+    exact: true,
+    heroLayout: false,
+  },
   {
     path: "/:id",
     component: lazy(() => import("../pages/NewsPage")),
-    exact: false,
+    exact: true,
     heroLayout: false,
   },
 ];
