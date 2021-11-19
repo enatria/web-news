@@ -12,7 +12,7 @@ function Programming() {
             </Helmet>
             <Container>
                 <NewsTitle id={"Programming"}/>
-                <ListNews endpoint={endpoints.EVERYTHING} query={'programming'} />
+                <ListNews endpoint={endpoints.PROGRAMMING} />
             </Container>
         </>
     )

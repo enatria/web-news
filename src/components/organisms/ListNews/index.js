@@ -18,13 +18,21 @@ const useStyles = makeStyles({
 
 export const endpoints = {
   EVERYTHING: 'everything',
-  HEADLINES: 'top-headlines'
+  HEADLINES: 'top-headlines',
+  INDONESIA: 'indonesia',
+  COVID: 'covid',
+  PROGRAMMING: 'programming'
 }
 
 const ListNews = ({ endpoint, country, query, gridNoBreakPoint }) => {
   const classes = useStyles();
-  const API_KEY   = '287523f3d2a8490fba3d719d94fb4536'
-  const URL       = `https://newsapi.org/v2/${endpoint}?apiKey=${API_KEY}${country ? '&country='+country : '' }${query ? '&q='+query : '' }`
+
+  //  coding saat fetch API dari original newsapi.org
+  // const API_KEY   = '287523f3d2a8490fba3d719d94fb4536'
+  // const URL       = `https://newsapi.org/v2/${endpoint}?apiKey=${API_KEY}${country ? '&country='+country : '' }${query ? '&q='+query : '' }`
+
+  // menggunakan mockAPI sebagai pengganti API original, karena terdapat masalah saat di deploy jjika menggunakan API original
+  const URL  = `https://619652f5af46280017e7dfa6.mockapi.io/${endpoint}?p=1&l=20${query ? '&search='+query : '' }`
 
   const {loading, error, data} = useFetch(URL)
 
