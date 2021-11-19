@@ -10,13 +10,25 @@ export const buttonVariant = {
 };
 
 function Button(props) {
-  return (
-      <RouteLink style={{textDecoration: 'none'}} to={props.href}>
+  if (props.blank && props.link) {
+    return (
+      <a href={props.link} target="_blank" rel="noreferrer">
+        <MuiButton variant={props.variant} style={{backgroundColor: color.PRIMARY}} onClick={props.onClick}>
+            {props.children}
+        </MuiButton>
+      </a>
+    )
+  } else {
+    return (
+      <RouteLink 
+        style={{textDecoration: 'none'}} 
+        to={props.href} target={props.blank ? '_blank' : ''} >
           <MuiButton variant={props.variant} style={{backgroundColor: color.PRIMARY}} onClick={props.onClick}>
               {props.children}
           </MuiButton>
       </RouteLink>
-  )
+    )
+  }
 }
 
 Button.defaultProps = {
